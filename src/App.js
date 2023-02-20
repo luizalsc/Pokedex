@@ -1,13 +1,14 @@
 import './App.css'
-import { PokemonList } from './components/pokemon-list/pokemon-list'
-
+import { Button } from './components/buttons/button'
+import { AppRoutes } from './pages/routes'
 
 
 function App() {
   return (
     <>
-      <PokemonList/>
-    
+      <AppRoutes/>
+      <Button>Carregar mais</Button>
+      <Button>Mudar tema</Button>
     </>   
   )
 }
