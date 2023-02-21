@@ -25,4 +25,27 @@ async function getPokemonsUrl(pokemonName){
 }
 
 
+async function getPokemonDetails(id) {
+    const response = await fetch (`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    return (await response.json())
+}
+
+async function getPokemonAbilities(id){
+    const abilities = await getPokemonDetails(id)
+    const response = await Promise.all(abilities.abilities.map((ability) => {
+        const abilityName = ability.ability.name
+        
+       return(getAbilitiesDetails(abilityName))      
+    }) )
+    return(response)
+}
+
+async function getAbilitiesDetails(abilityName){
+    const response = await fetch(`https://pokeapi.co/api/v2/ability/${abilityName}/`)
+    return (await response.json())
+}
+
+
+export { getPokemonAbilities }
+export { getPokemonDetails }
 export {getPokemonsData}
