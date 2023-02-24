@@ -36,32 +36,36 @@ const PokemonDetails = () => {
     
     return(
         <Section>
-            <Link to='/'>Voltar</Link>
-            <Card>
-                <H1>{pokemon.name}</H1>
-                <Img src={`${pokemon.img.front_default}`}/>
-                <Img src={`${pokemon.img.back_default}`}/>
-                <H2>Type</H2>
+            <HomePageLinkContainer>
+            <HomePageLink to='/'>Voltar</HomePageLink>
+            </HomePageLinkContainer>
+            <div className='card'>
+                <h1>{pokemon.name}</h1>
+                <div className='img-box'>
+                    <img src={`${pokemon.img.front_default}`}/>
+                    <img src={`${pokemon.img.back_default}`}/>
+                </div>
+                <h2>Type</h2>
                 <ul>
                     {
                         pokemon.type.map((type, index) => {
                             return (
                                 <li key={index}>
-                                    <p>{type.type.name}</p>
+                                    <p className='type-text'>{type.type.name}</p>
                                 </li>
                             )
                         })
                     }
                 </ul>
-            </Card>
-            <Div>
-                <H2>Abilities</H2>
-                <ul>
+            </div>
+            <div className='info'>
+                <h2>Abilities</h2>
+                <ul className='abilities'>
                 {
                     pokemon.abilitiesNames.map((ability, index) => {
                         return (
                             <li key={index}>
-                                <H3>{ability.name}</H3>
+                                <h3>{ability.name}</h3>
                                 <p>
                                 {
 
@@ -74,22 +78,22 @@ const PokemonDetails = () => {
                     })
                 }
                 </ul>
-                <MovesInfo>
-                    <MoveTitle>Moves</MoveTitle>
-                    <MovesList>
+                <div>
+                    <h2>Moves</h2>
+                    <ul className='moves'>
                     {
                         pokemon.moves.map((move, index) => {
                             return (
-                                <Move key={index}>
+                                <li key={index}>
                                     <p>{move.move.name}</p>
-                                </Move>
+                                </li>
                             )
                         })
                     }
                     
-                    </MovesList>
-                </MovesInfo>
-            </Div>
+                    </ul>
+                </div>
+            </div>
         </Section>
     )
 
@@ -102,70 +106,121 @@ const Section = styled.section`
         "card info info info"
         / 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
-`
 
-const Img = styled.img`
+img {
     width: 6rem;
-`
-const H1 = styled.h1`
-    text-transform: uppercase;
-    font-family: sans-serif;
-`
-const H2 = styled.h2`
-    text-transform: uppercase;
-    font-family: sans-serif;
-`
+}
 
-const H3 = styled.h3`
+.img-box {
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background-color: #F5F6E4;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-family: sans-serif; 
+}
+
+h3 {
     font-size: 1rem;
     text-transform: uppercase;
     font-family: sans-serif;
-`
-const Card = styled.div`
-    grid-area: card;
-    padding: 0.5rem;
-    background-color: gray;
+}
 
-`
-const Div = styled.div`
-    grid-area: info;
-    padding: 1rem;
-    background-color: antiquewhite;
-`
-
-const MovesInfo = styled.div`
-    display: grid;
-    grid: "title"
-        "column"/ 1fr;
-    grid-gap: 0.5rem;
-`
-
-const MoveTitle = styled.h2`
-    grid-area: title;
+.type-text {
     text-transform: uppercase;
-    font-family: sans-serif;
-`
+}
 
-const MovesList = styled.ul`
+.card {
+    grid-area: card;
+    padding: 1rem;
+    height: 21rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.info {
+    grid-area: info;
+    padding: 2rem;
+    background-color: #F5F6E4;
+}
+
+.info li {
+    margin-left: 3rem;
+}
+
+.abilities {
+    display: flex;
+}
+
+.abilities li {
+    width: 50%;
+    background-color: pink;
+}
+
+.moves {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
     grid-area: column;
-`
+}
 
-const Move = styled.li`
-    align-self: center;
-    width: 7rem;
-    font-size: 1rem;
+.moves li {
+    display: flex;
+    justify-content: center;
+    width: 7.5rem;
+    height: 4rem;
     background-color: white;
     margin: 0.5rem;
-    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    
+}
+
+.moves li p {
+    text-transform: capitalize;
+    text-align: center;
+    align-self: center;
+}
 `
+const HomePageLink = styled(Link)`
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #000;
+    align-self: center;  
+
+&:visited {
+    color: #000;
+}
+
+&:hover {
+    color: #fff;
+}
+`
+ const HomePageLinkContainer = styled.div `
+    display: flex;
+    background-color: #F5F6E4;
+    height: 4rem;
+    width: 4rem;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 0.8px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    transition: background-color 0.3s ease-in-out;
+
+ &:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+ `
 
 export { PokemonDetails }
 
-
-// grid: "title title title"
-//         "column column column"/ 1fr 1fr 1fr;
 
