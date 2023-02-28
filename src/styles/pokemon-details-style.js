@@ -1,6 +1,6 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-
 
 export const Section = styled.section`
     padding: 1rem;
@@ -74,16 +74,10 @@ h3 {
     border-radius: 0.5rem;
 }
 
-.info li {
-    margin: auto 3rem;
-}
-
-.abilities {
-    display: flex;  
-}
-
 .abilities li {
        width: 50%;
+       background-color: red;
+
 }
 
 .moves {
@@ -107,7 +101,6 @@ h3 {
 .moves li p {
     text-transform: capitalize;
     text-align: center;
-    align-self: center;
 }
 `
 export const HomePageLink = styled(Link)`
@@ -144,3 +137,14 @@ export const HomePageLinkContainer = styled.div `
     cursor: pointer;
 }
  `
+
+export const AbilitiesUl = styled.ul`
+    display: flex;
+    align-self: flex-start;
+
+li {
+    padding: 1rem;
+    flex: 1;
+ }
+
+`

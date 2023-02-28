@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Button } from '../buttons/button'
 import { getPokemonsData } from '../../services/pokemons-fetch-api'
 import { Link } from 'react-router-dom'
 import { PokemonListSection, ImgContainer } from '../../styles/pokemon-list-style'
+import { ThemeContext } from '../../contexts/theme-contex'
 
 
 const PokemonList = () => {
@@ -10,6 +11,10 @@ const PokemonList = () => {
     const [pokemons, setPokemons] = useState({
             list: [ ]
         })
+
+    const [ offsetNumber, setOffsetNumber ] = useState(10)
+
+    const { theme } = useContext(ThemeContext)
 
     useEffect(() => {
 
@@ -24,34 +29,33 @@ const PokemonList = () => {
         }
 
         fetchData()
-
         
     }, [])
 
-    // const [ offsetNumber, setOffsetNumber ] = useState(10)
 
     const addPokemons = async (newPokemons) => {
-        
+
+        setOffsetNumber(offsetNumber + 10)
+        newPokemons = offsetNumber
         const newPokemonsData = await getPokemonsData(newPokemons)
         setPokemons({
             list: [...pokemons.list, ...newPokemonsData]
         })
     }
 
-    
     return(
             <PokemonListSection>
-                <ul>  
+                <ul style={{color: theme.color}}>  
                             
                 {
                     pokemons.list.map((pokemon, index) => {
                         return(
-                            <li key={index}>
+                            <li key={index} style={{backgroundColor: theme.background}}>
                                 <Link to={`/pokemons/${pokemon.id}`}>
                                 <ImgContainer>
                                     <img src={`${pokemon.sprites.front_default}`}/>
                                 </ImgContainer>
-                                <h1>{`${pokemon.name}`}</h1>
+                                <h1 style={{color: theme.color}}>{`${pokemon.name}`}</h1>
                                 </Link>
                             </li>
                         )
@@ -60,7 +64,7 @@ const PokemonList = () => {
                             
                 </ul>
         
-                <Button addPokemons={addPokemons} >Carregar mais</Button>
+                <Button addPokemons={addPokemons}>Carregar mais Pokemons</Button>
             </PokemonListSection>
         )
 }
