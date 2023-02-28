@@ -1,13 +1,19 @@
-async function createPokemonList(){
-    
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=10')
+async function createPokemonList(n){
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${n}`)
     return(await response.json())
 }
 
+// async function addPokemons(n){
+//     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${n}`)
+//     n = n + 10
+//     console.log(await response.json())
+// }
 
-async function getPokemonsData(){
+// addPokemons(10)
 
-    const pokemonsListed = await createPokemonList()
+async function getPokemonsData(n){
+
+    const pokemonsListed = await createPokemonList(n)
     const response = await Promise.all(pokemonsListed.results.map((pokemon) => {
         const pokemonName = pokemon.name
         
@@ -49,3 +55,4 @@ async function getAbilitiesDetails(abilityName){
 export { getPokemonAbilities }
 export { getPokemonDetails }
 export {getPokemonsData}
+export { createPokemonList }

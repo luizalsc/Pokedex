@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <GlobalStyle/>
-      <Button>Carregar mais</Button>
       <Button>Mudar tema</Button>
       <AppRoutes/>
     </>   
