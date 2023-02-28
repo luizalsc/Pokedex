@@ -1,15 +1,18 @@
 import './App.css'
-import { Button } from './components/buttons/button'
+import { ThemeTogglerButton } from './components/buttons/theme-toggler-button'
 import { AppRoutes } from './pages/routes'
 import { createGlobalStyle } from 'styled-components'
+import { ThemeProvider } from './contexts/theme-contex'
 
 
 function App() {
   return (
     <>
-      <GlobalStyle/>
-      <Button>Mudar tema</Button>
-      <AppRoutes/>
+      <ThemeProvider>
+        <GlobalStyle/>
+        <ThemeTogglerButton/>
+        <AppRoutes/>
+      </ThemeProvider>
     </>   
   )
 }

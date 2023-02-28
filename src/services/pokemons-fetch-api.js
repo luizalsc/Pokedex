@@ -3,14 +3,6 @@ async function createPokemonList(n){
     return(await response.json())
 }
 
-// async function addPokemons(n){
-//     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${n}`)
-//     n = n + 10
-//     console.log(await response.json())
-// }
-
-// addPokemons(10)
-
 async function getPokemonsData(n){
 
     const pokemonsListed = await createPokemonList(n)

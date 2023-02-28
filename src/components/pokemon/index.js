@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { getPokemonDetails, getPokemonAbilities } from '../../services/pokemons-fetch-api'
 import { useParams } from 'react-router-dom'
-import { Section, HomePageLink, HomePageLinkContainer } from '../../styles/pokemon-details-style'
+import { Section, HomePageLink, HomePageLinkContainer, AbilitiesUl } from '../../styles/pokemon-details-style'
+import { ThemeContext } from '../../contexts/theme-contex'
 
 const PokemonDetails = () => {
+    
+    const { theme } = useContext(ThemeContext)
 
     const [pokemon, setPokemon] = useState({
         name: '',
@@ -35,7 +38,7 @@ const PokemonDetails = () => {
     }, [])
     
     return(
-        <Section>
+        <Section style={{backgroundColor: theme.background}}>
             <HomePageLinkContainer>
             <HomePageLink to='/'>Voltar</HomePageLink>
             </HomePageLinkContainer>
@@ -45,41 +48,39 @@ const PokemonDetails = () => {
                     <img src={`${pokemon.img.front_default}`}/>
                     <img src={`${pokemon.img.back_default}`}/>
                 </div>
-                <h2>Type</h2>
+                <h2 style={{color: theme.color}}>Type</h2>
                 <ul>
                     {
                         pokemon.type.map((type, index) => {
                             return (
                                 <li key={index}>
-                                    <p className='type-text'>{type.type.name}</p>
+                                    <p className='type-text' style={{color: theme.color}}>{type.type.name}</p>
                                 </li>
                             )
                         })
                     }
                 </ul>
             </div>
-            <div className='info'>
-                <h2>Abilities</h2>
-                <ul className='abilities'>
+            <div className='info' style={{backgroundColor: theme.background}}>
+                <h2 style={{color: theme.color}}>Abilities</h2>
+                <AbilitiesUl style={{color: theme.color}}>
                 {
                     pokemon.abilitiesNames.map((ability, index) => {
                         return (
                             <li key={index}>
-                                <h3>{ability.name}</h3>
-                                <p>
+                                <h3 style={{color: theme.color}}>{ability.name}</h3>
+                                <p style={{color: theme.color}}>
                                 {
-
                                     (ability.effect_entries[0].language.name == "en") ? ability.effect_entries[0].effect : ability.effect_entries[1].effect
-                                
                                 }
                                 </p>
                             </li>
                         )
                     })
                 }
-                </ul>
+                </AbilitiesUl>
                 <div>
-                    <h2>Moves</h2>
+                    <h2  style={{color: theme.color}}>Moves</h2>
                     <ul className='moves'>
                     {
                         pokemon.moves.map((move, index) => {

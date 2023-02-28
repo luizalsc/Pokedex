@@ -1,21 +1,19 @@
-import { useState } from "react"
-
+import { useContext } from "react"
+import { ThemeContext } from "../../contexts/theme-contex"
 
 
 const Button = (props) => {
 
-    const [ offsetNumber, setOffsetNumber ] = useState(10)
-
+    const { theme } = useContext(ThemeContext)
 
     const handleButtonClick = (event) => {
         event.preventDefault()
-        setOffsetNumber(offsetNumber + 10)
-        props.addPokemons(offsetNumber)
+        props.addPokemons()
 
     }
 
     return(
-        <button onClick={handleButtonClick}>{props.children}</button>
+        <button onClick={handleButtonClick} {...props} style={{color: theme.color, backgroundColor: theme.background}} />
     )
 }
 
