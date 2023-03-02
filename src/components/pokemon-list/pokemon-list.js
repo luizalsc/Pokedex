@@ -44,6 +44,7 @@ const PokemonList = () => {
     }
 
     return(
+            
             <PokemonListSection>
                 <ul style={{color: theme.color}}>  
                             
@@ -52,7 +53,7 @@ const PokemonList = () => {
                         return(
                             <li key={index} style={{backgroundColor: theme.background}}>
                                 <Link to={`/pokemons/${pokemon.id}`}>
-                                <ImgContainer>
+                                <ImgContainer style={{backgroundColor: theme.backgroundDetails}}>
                                     <img src={`${pokemon.sprites.front_default}`}/>
                                 </ImgContainer>
                                 <h1 style={{color: theme.color}}>{`${pokemon.name}`}</h1>
@@ -64,10 +65,11 @@ const PokemonList = () => {
                             
                 </ul>
         
-                <Button addPokemons={addPokemons}>Carregar mais Pokemons</Button>
+                <Button addPokemons={addPokemons} className='button-default'>Mais Pokemons</Button>
             </PokemonListSection>
         )
 }
 
 
 export { PokemonList }
+//style={{backgroundColor: theme.backgroundLight}}

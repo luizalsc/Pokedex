@@ -43,8 +43,10 @@ const PokemonDetails = () => {
             <HomePageLink to='/'>Voltar</HomePageLink>
             </HomePageLinkContainer>
             <div className='card'>
-                <h1>{pokemon.name}</h1>
-                <div className='img-box'>
+                <h1 style={{backgroundColor: theme.backgroundDetails, color: theme.colorDetails}}>
+                    {pokemon.name}
+                </h1>
+                <div className='img-box' style={{backgroundColor: theme.backgroundDetails}}>
                     <img src={`${pokemon.img.front_default}`}/>
                     <img src={`${pokemon.img.back_default}`}/>
                 </div>
@@ -61,15 +63,15 @@ const PokemonDetails = () => {
                     }
                 </ul>
             </div>
-            <div className='info' style={{backgroundColor: theme.background}}>
-                <h2 style={{color: theme.color}}>Abilities</h2>
-                <AbilitiesUl style={{color: theme.color}}>
+            <div className='info' style={{backgroundColor: theme.backgroundDetails}}>
+                <h2 style={{color: theme.colorDetails}}>Abilities</h2>
+                <AbilitiesUl>
                 {
                     pokemon.abilitiesNames.map((ability, index) => {
                         return (
                             <li key={index}>
-                                <h3 style={{color: theme.color}}>{ability.name}</h3>
-                                <p style={{color: theme.color}}>
+                                <h3 style={{color: theme.colorDetails}}>{ability.name}</h3>
+                                <p style={{color: theme.colorDetails}}>
                                 {
                                     (ability.effect_entries[0].language.name == "en") ? ability.effect_entries[0].effect : ability.effect_entries[1].effect
                                 }
@@ -80,7 +82,7 @@ const PokemonDetails = () => {
                 }
                 </AbilitiesUl>
                 <div>
-                    <h2  style={{color: theme.color}}>Moves</h2>
+                    <h2  style={{color: theme.colorDetails}}>Moves</h2>
                     <ul className='moves'>
                     {
                         pokemon.moves.map((move, index) => {
@@ -102,4 +104,4 @@ const PokemonDetails = () => {
 
 export { PokemonDetails }
 
-
+//style={{backgroundColor: theme.backgroundDetails}}

@@ -1,4 +1,3 @@
-import { useContext } from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
@@ -18,7 +17,6 @@ img {
     display: flex;
     justify-content: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    background-color: #F5F6E4;
     border-radius: 0.3rem;
 }
 
@@ -28,8 +26,6 @@ h1 {
     font-size: 1.6rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    background-color: rgb(83, 84, 57);
-    color: #fff;
 }
 
 h2 {
@@ -38,14 +34,12 @@ h2 {
     line-height: 2.3rem;
     border-bottom: rgb(83, 84, 57) solid 0.1rem;
     margin: 0.5rem 0;
-    color: rgb(83, 84, 57);
 }
 
 h3 {
     font-size: 1rem;
     text-transform: uppercase;
     font-family: sans-serif;
-    color: rgb(83, 84, 57);
 }
 
 .type-text {
@@ -70,14 +64,7 @@ h3 {
 .info {
     grid-area: info;
     padding: 2rem;
-    background-color: #F5F6E4;
     border-radius: 0.5rem;
-}
-
-.abilities li {
-       width: 50%;
-       background-color: red;
-
 }
 
 .moves {
@@ -92,7 +79,7 @@ h3 {
     justify-content: center;
     width: 7.5rem;
     height: 4rem;
-    background-color: white;
+    background-color: #fff;
     margin: 0.5rem;
     border-radius: 0.5rem;
     box-shadow: rgba(83, 84, 57, 0.65) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
@@ -108,7 +95,6 @@ export const HomePageLink = styled(Link)`
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: bold;
-    color: #000;
     height: 4rem;
     width: 4rem; 
     text-align: center;
