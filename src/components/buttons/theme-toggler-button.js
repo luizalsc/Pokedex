@@ -9,7 +9,7 @@ export const ThemeTogglerButton = () => {
 
     return(
         <div>
-            <Button onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}className='button-default'>Mudar tema</Button>
+            <Button onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}className='button-default' >Mudar tema</Button>
         </div>
     )
 }
