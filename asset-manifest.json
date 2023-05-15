@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/luizalsc/Quest_React_Avancado_Pokedex/static/css/main.073c9b0a.css",
+    "main.js": "/luizalsc/Quest_React_Avancado_Pokedex/static/js/main.cca41c5d.js",
+    "static/js/787.7e0b23c5.chunk.js": "/luizalsc/Quest_React_Avancado_Pokedex/static/js/787.7e0b23c5.chunk.js",
+    "index.html": "/luizalsc/Quest_React_Avancado_Pokedex/index.html",
+    "main.073c9b0a.css.map": "/luizalsc/Quest_React_Avancado_Pokedex/static/css/main.073c9b0a.css.map",
+    "main.cca41c5d.js.map": "/luizalsc/Quest_React_Avancado_Pokedex/static/js/main.cca41c5d.js.map",
+    "787.7e0b23c5.chunk.js.map": "/luizalsc/Quest_React_Avancado_Pokedex/static/js/787.7e0b23c5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.cca41c5d.js"
+  ]
+}
