@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Quest_React_Avancado_Pokedex/static/css/main.073c9b0a.css",
-    "main.js": "/Quest_React_Avancado_Pokedex/static/js/main.df29a670.js",
+    "main.js": "/Quest_React_Avancado_Pokedex/static/js/main.2a32b2b8.js",
     "static/js/787.7e0b23c5.chunk.js": "/Quest_React_Avancado_Pokedex/static/js/787.7e0b23c5.chunk.js",
     "index.html": "/Quest_React_Avancado_Pokedex/index.html",
     "main.073c9b0a.css.map": "/Quest_React_Avancado_Pokedex/static/css/main.073c9b0a.css.map",
-    "main.df29a670.js.map": "/Quest_React_Avancado_Pokedex/static/js/main.df29a670.js.map",
+    "main.2a32b2b8.js.map": "/Quest_React_Avancado_Pokedex/static/js/main.2a32b2b8.js.map",
     "787.7e0b23c5.chunk.js.map": "/Quest_React_Avancado_Pokedex/static/js/787.7e0b23c5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.df29a670.js"
+    "static/js/main.2a32b2b8.js"
   ]
 }
