@@ -1,12 +1,14 @@
 import styled from "styled-components"
 
 export const PokemonListSection = styled.section`
-    height: 100vh;
+
+min-height: 100vh;
 
 ul{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 ul li{

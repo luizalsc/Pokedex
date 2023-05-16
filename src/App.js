@@ -7,13 +7,11 @@ import { ThemeProvider } from './contexts/theme-contex'
 
 function App() {
   return (
-    <>
       <ThemeProvider>
-        <GlobalStyle/>
-        <ThemeTogglerButton/>
-        <AppRoutes/>
-      </ThemeProvider>
-    </>   
+        <GlobalStyle />
+        <ThemeTogglerButton />
+        <AppRoutes />
+      </ThemeProvider>     
   )
 }
 

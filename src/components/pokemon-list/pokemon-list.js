@@ -17,24 +17,17 @@ const PokemonList = () => {
     const { theme } = useContext(ThemeContext)
 
     useEffect(() => {
-
         const fetchData = async () => {
-            
             const pokemonsData = await getPokemonsData()
-            setPokemons({
-                
+            setPokemons({ 
                list: [...pokemonsData]
-
             })
         }
-
-        fetchData()
-        
+        fetchData()    
     }, [])
 
 
     const addPokemons = async (newPokemons) => {
-
         setOffsetNumber(offsetNumber + 10)
         newPokemons = offsetNumber
         const newPokemonsData = await getPokemonsData(newPokemons)
@@ -45,7 +38,7 @@ const PokemonList = () => {
 
     return(
             
-            <PokemonListSection>
+            <PokemonListSection style={{backgroundColor: theme.background}}>
                 <ul style={{color: theme.color}}>  
                             
                 {
@@ -72,4 +65,3 @@ const PokemonList = () => {
 
 
 export { PokemonList }
-//style={{backgroundColor: theme.backgroundLight}}
