@@ -13,7 +13,9 @@ const Button = (props) => {
     }
 
     return(
+      <div style={{backgroundColor: theme.background}}>
         <button onClick={handleButtonClick} {...props} style={{color: theme.color, backgroundColor: theme.background}} />
+      </div>
     )
 }
 
