@@ -1,16 +1,16 @@
-import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom'
+import {  Route, Routes, BrowserRouter } from 'react-router-dom'
 import { Pokemons } from './pokemons'
 import { Pokemon } from './pokemon'
 
 
 const AppRoutes =() => {
     return(
-        <HashRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route exact path='/' element={<Pokemons/>}/>
                 <Route exact path='/pokemons/:id' element={<Pokemon/>}/>
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 
